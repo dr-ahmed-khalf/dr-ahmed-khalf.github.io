@@ -36,7 +36,7 @@ if (panel && window.matchMedia("(pointer:fine)").matches) {
   const sceneEl = document.querySelector(".scene");
   const card = document.querySelector(".glass-panel");
   if (!sceneEl || !card) return;
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = false; // decorative motion stays on (Windows "animation effects off" would otherwise hide everything)
   const fine = window.matchMedia("(pointer:fine)").matches;
   const small = () => window.innerWidth <= 650;
 
@@ -141,7 +141,7 @@ if (panel && window.matchMedia("(pointer:fine)").matches) {
 
 /* ===== v5 magic layer: preloader, cursor glow, magnetic buttons, constellation lines, ECG, spring tilt ===== */
 (function () {
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = false; // decorative motion stays on (Windows "animation effects off" would otherwise hide everything)
   const fine = window.matchMedia("(pointer:fine)").matches;
   // preloader: AK mark + heartbeat line
   const pre = document.createElement("div");
